@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 25.5497
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/roslinka.png-2b8504623af4f48db6668cb2605b8aa6.stex"
+
+[node name="Plant" type="StaticBody2D"]
+position = Vector2( 134.828, 363.536 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.499359, 0 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2.99617, -2.24713 )
+scale = Vector2( 1.57926, 1.32958 )
+texture = SubResource( 2 )
