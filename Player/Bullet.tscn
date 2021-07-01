@@ -21,4 +21,8 @@ region_rect = Rect2( 770, 800, 70, 100 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource( 1 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+
 [connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]

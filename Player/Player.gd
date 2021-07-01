@@ -7,6 +7,10 @@ export var fire_rate = 0.2
 var bullet = preload("res://Player/Bullet.tscn")
 var can_fire = true
 
+func _ready():
+	yield(get_tree(), "idle_frame")
+	get_tree().call_group("plants", "set_player", self)
+
 func _process(delta):
 	look_at(get_global_mouse_position())
 	
@@ -20,15 +24,5 @@ func _process(delta):
 		yield(get_tree().create_timer(fire_rate), "timeout")
 		can_fire = true
 	
-func _physics_process(delta):
-	var direction = Vector2()
-	if Input.is_action_pressed("move_up"):
-		direction += Vector2(0, -1)
-	if Input.is_action_pressed("move_down"):
-		direction += Vector2(0, 1)
-	if Input.is_action_pressed("move_left"):
-		direction += Vector2(-1, 0)
-	if Input.is_action_pressed("move_right"):
-		direction += Vector2(1, 0)
-	
-	move_and_slide(direction * speed)
+func kill():
+	get_tree().reload_current_scene()
