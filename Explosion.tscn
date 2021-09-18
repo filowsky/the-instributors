@@ -20,4 +20,5 @@ frames = SubResource( 1 )
 speed_scale = 2.0
 playing = true
 script = ExtResource( 6 )
+
 [connection signal="animation_finished" from="." to="." method="_on_Explosion_animation_finished"]

@@ -1,8 +1,11 @@
 extends KinematicBody2D
 
+#export var speed = 100
+#export var bullet_speed = 1000
+#export var fire_rate = 0.2
 export var speed = 100
-export var bullet_speed = 1000
-export var fire_rate = 0.2
+export var bullet_speed = 500
+export var fire_rate = 0.5
 
 var bullet = preload("res://Player/Bullet.tscn")
 var can_fire = true
@@ -23,6 +26,14 @@ func _process(delta):
 		can_fire = false
 		yield(get_tree().create_timer(fire_rate), "timeout")
 		can_fire = true
+		
+	if get_tree().get_nodes_in_group("instrybutor").size() == 0:
+		print("Strzeliles w instrybutor. GAME OVER!")
+		get_tree().quit()
+	
+	if get_tree().get_nodes_in_group("plants").size() == 0:
+		print("WIN!")
+		get_tree().quit()
 	
 func kill():
 	get_tree().reload_current_scene()

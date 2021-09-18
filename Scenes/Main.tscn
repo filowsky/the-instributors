@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Tilemaps/terrainTiles_default.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Collidables/Tree.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprites/train_01.png" type="Texture" id=3]
+[ext_resource path="res://Collidables/Instrybutor.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Collidables/Plant.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Train.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Train_left.gd" type="Script" id=7]
+[ext_resource path="res://Sprites/train_02.png" type="Texture" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "terrainTiles_default.png 0"
@@ -579,7 +583,7 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 15, 0, 2, 16, 0, 3, 0, 0, 4, 1, 0, 5, 0, 0
 position = Vector2( 503, 313 )
 
 [node name="Tree" parent="." instance=ExtResource( 4 )]
-position = Vector2( 296, 69 )
+position = Vector2( 297.26, 69 )
 
 [node name="Plant" parent="." instance=ExtResource( 5 )]
 position = Vector2( 81.279, 317.371 )
@@ -598,3 +602,63 @@ position = Vector2( 52.1547, 157.821 )
 
 [node name="Plant6" parent="." instance=ExtResource( 5 )]
 position = Vector2( 360.492, 435.768 )
+
+[node name="Train_left" type="KinematicBody2D" parent="."]
+position = Vector2( 213.546, 1.41428 )
+script = ExtResource( 7 )
+
+[node name="train_02" type="Sprite" parent="Train_left"]
+position = Vector2( 0.987183, -2.37744 )
+texture = ExtResource( 8 )
+
+[node name="Plant7" parent="Train_left" instance=ExtResource( 5 )]
+position = Vector2( -2.01703, -53.1536 )
+z_index = 3
+
+[node name="Plant8" parent="Train_left" instance=ExtResource( 5 )]
+position = Vector2( -3.27692, -27.9552 )
+z_index = 3
+
+[node name="Plant9" parent="Train_left" instance=ExtResource( 5 )]
+position = Vector2( 4.28265, -4.01666 )
+z_index = 3
+
+[node name="Plant10" parent="Train_left" instance=ExtResource( 5 )]
+position = Vector2( -7.05658, 19.9218 )
+z_index = 3
+
+[node name="Plant11" parent="Train_left" instance=ExtResource( 5 )]
+position = Vector2( 8.06244, 41.3405 )
+z_index = 3
+
+[node name="Plant12" parent="Train_left" instance=ExtResource( 5 )]
+position = Vector2( -9.57648, 53.9397 )
+z_index = 3
+
+[node name="Train" type="KinematicBody2D" parent="."]
+position = Vector2( 855, 6 )
+script = ExtResource( 6 )
+
+[node name="train_01" type="Sprite" parent="Train"]
+position = Vector2( -0.71936, -3.44386 )
+texture = ExtResource( 3 )
+
+[node name="Plant13" parent="Train" instance=ExtResource( 5 )]
+position = Vector2( -3.43073, -75.3782 )
+z_index = 3
+
+[node name="Plant14" parent="Train" instance=ExtResource( 5 )]
+position = Vector2( -4.69073, -46.4 )
+z_index = 3
+
+[node name="Plant15" parent="Train" instance=ExtResource( 5 )]
+position = Vector2( 4.12872, -8.60239 )
+z_index = 3
+
+[node name="Plant16" parent="Train" instance=ExtResource( 5 )]
+position = Vector2( -7.21051, 17.8559 )
+z_index = 3
+
+[node name="Plant17" parent="Train" instance=ExtResource( 5 )]
+position = Vector2( 2.86896, 46.8341 )
+z_index = 3

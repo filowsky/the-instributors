@@ -14,7 +14,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Top Down Shooter Tutorial"
+config/name="the-instributors"
 run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://icon.png"
 
